@@ -8,11 +8,11 @@ export const Items = () => {
       {isLoadingItems ? (
         <p>Loading...</p>
       ) : (
-        <ul>
+        <div className='flex flex-row flex-wrap gap-10 my-10 mx-10'>
           {dataItems?.map((item) => (
             <ItemBlock key={item.id} item={item} />
           ))}
-        </ul>
+        </div>
       )}
     </div>
   );

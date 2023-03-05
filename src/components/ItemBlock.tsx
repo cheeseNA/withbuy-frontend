@@ -1,9 +1,10 @@
 import { FC } from 'react';
 import { Item } from '../types/types';
+import { Link } from 'react-router-dom';
 
 export const ItemBlock: FC<{ item: Item }> = ({ item }) => {
   return (
-    <a href='https://google.com'>
+    <Link to={`/item/${item.id}`}>
       <div className='w-64 h-64 rounded-xl overflow-hidden border-2 bg-white shadow-md hover:shadow-xl'>
         <img
           className='object-cover w-full h-32'
@@ -36,6 +37,6 @@ export const ItemBlock: FC<{ item: Item }> = ({ item }) => {
           </div>
         </div>
       </div>
-    </a>
+    </Link>
   );
 };

@@ -21,3 +21,7 @@ export interface Item {
   is_for_unit: boolean;
   chat: ChatId;
 }
+
+export interface Error {
+  detail: string;
+}

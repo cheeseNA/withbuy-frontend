@@ -3,11 +3,13 @@ import { AuthProvider } from './context/AuthContext';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Items } from './components/Items';
 import { ItemPage } from './components/ItemPage';
+import { Header } from './components/Header';
 
 function App() {
   return (
     <AuthProvider>
       <BrowserRouter>
+        <Header />
         <Routes>
           <Route index element={<Items />} />
           <Route path='login' element={<Auth />} />

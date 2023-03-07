@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
+import { useProcessAuth } from '../hooks/useProcessAuth';
 
 export const Header = () => {
+  const { logout } = useProcessAuth();
   return (
     <nav className='flex justify-between items-center flex-wrap bg-teal-500 p-4 sticky top-0 z-50'>
       <Link to='/'>
@@ -14,7 +16,7 @@ export const Header = () => {
           />
         </button>
 
-        <div className='absolute right-0 top-8 z-40 hidden flex-col peer-focus:flex my-4 list-none bg-white divide-y divide-slate-100 rounded-md shadow'>
+        <div className='absolute right-0 top-8 z-40 hidden flex-col hover:flex peer-focus:flex my-4 list-none bg-white divide-y divide-slate-100 rounded-md shadow'>
           <div className='px-4 py-3'>
             <span className='block text-slate-900'>Hoge Fuga</span>
             <span className='block text-slate-500'>test@test.com</span>
@@ -31,7 +33,7 @@ export const Header = () => {
               </a>
             </li>
           </ul>
-          <a href='#' className='block px-4 py-2 text-pink-600 hover:bg-slate-100'>
+          <a href='#' onClick={logout} className='block px-4 py-2 text-pink-600 hover:bg-slate-100'>
             Log out
           </a>
         </div>

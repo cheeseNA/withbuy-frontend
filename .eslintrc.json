@@ -13,6 +13,14 @@
   },
   "env": { "browser": true, "node": true, "es6": true },
   "rules": {
-    // 個別に設定するESLintルールを記述
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      {
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_",
+        "caughtErrorsIgnorePattern": "^_"
+      }
+    ]
   }
 }
